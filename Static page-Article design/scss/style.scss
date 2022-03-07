@@ -1,0 +1,178 @@
+@import "./Partials/partial";
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: $zero;
+    @include pad($zero, $zero);
+    font-family: sans-serif, "Times New Roman", Times, serif;
+}
+
+//header section
+header {
+    margin: $zero;
+    h1 {
+        background: $darkblue;
+        color: $skyblue;
+        @include pad($def-20, $def-10 * 2);
+        font-weight: 100;
+        font-size: $def-50;
+    }
+    a {
+        display: none;
+    }
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+// .mobile-container
+.mobile-container {
+    display: flex;
+    nav {
+        background: $grey;
+        @include pad($def-30, $def-100);
+        display: block;
+        ul {
+            @include center;
+            display: block;
+            a {
+                color: $lightblue;
+                line-height: $def-35;
+                margin-left: -90px;
+            }
+        }
+    }
+    // article section
+    article {
+        h2 {
+            @include paddding($def-40, $def-20, $def-10, $def-20);
+            font-size: 1.5rem;
+        }
+        p {
+            @include pad($def-15, $def-20);
+        }
+    }
+    // column3 section
+    .column3 {
+        background: $skyblue;
+        @include pad($def-40, $def-100);
+        ul {
+            @include center;
+            a {
+                color: $blue;
+                margin-left: -90px;
+            }
+        }
+    }
+}
+// footer section
+footer {
+    position: relative;
+    background-color: $darkblue;
+    ul {
+        text-align: center;
+        @include pad($def-30, $def-5);
+        li {
+            color: $white;
+            display: inline;
+            &:after {
+                content: "|";
+            }
+            &:last-child:after {
+                content: " ";
+            }
+        }
+        a {
+            color: $white;
+            margin-left: $def-10;
+            @include paddding($zero, $def-15, $zero, $zero);
+            &:hover {
+                color: $skyblue;
+            }
+        }
+    }
+}
+// mobile view
+@media (max-width: 769px) {
+    // mobile-view-header
+    header {
+       
+        h1 {
+            @include pad($def-30, $def-17);
+        }
+        a {
+            visibility: visible;
+            display: block;
+            position: absolute;
+            top: $def-40;
+            right: $def-20;
+            font-size: $def-30;
+            color: $white;
+        }
+    }
+    // mobile-view-mobile-container
+        nav {
+            @include paddding($zero, $zero, $zero, $def-50);
+        
+            ul {
+                position: relative;
+                a {
+                    color: $white;
+                    @include pad(33px, $def-50);
+                    font-size: $def-20;
+                    line-height: 4px;
+                    display: block;
+                    background: $darkblue;
+                    &:hover {
+                        background-color: $white;
+                        color: $black;
+                    }
+                }
+            }
+        // mobile-view-article-section
+        article {
+            h2 {
+                @include pad($def-20, $def-20);
+                font-size: $def-20;
+            }
+            p {
+                @include pad($def-5, $def-17);
+            }
+        }
+        // mobile-view-column3-section
+        .column3 {
+            @include pad($def-30, 90px);
+            margin-top: $def-10;
+            ul {
+                margin-top: -8px;
+                a {
+                    @include paddding($zero, $zero, $zero, $def-5);
+                }
+            }
+        }
+    }
+    // mobile-view-footer-section
+    footer {
+        ul {
+            text-align: left;
+            @include pad($def-15, $def-5);
+            li {
+                display: block;
+                @include pad($def-10, 2px);
+                &:after {
+                    content: " ";
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1600px) {
+    // wrapper section
+    .wrapper {
+        margin: $zero auto;
+        width: 1900px;
+        height: 100%;
+    }
+}

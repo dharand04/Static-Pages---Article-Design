@@ -1,0 +1,10 @@
+@mixin pad($top, $left) {
+    padding: $top $left;
+}
+@mixin paddding($top, $right, $bottom, $left) {
+    padding: $top $right $bottom $left;
+}
+@mixin center {
+    position: absolute;
+    padding-left: 12px;
+}
